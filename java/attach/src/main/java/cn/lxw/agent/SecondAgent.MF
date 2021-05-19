@@ -1,0 +1,4 @@
+Agent-Class: cn.lxw.agent.SecondAgent
+Premain-Class: cn.lxw.agent.SecondAgent
+Can-Redine-Classes: true
+Can-Retransform-Classes: true
