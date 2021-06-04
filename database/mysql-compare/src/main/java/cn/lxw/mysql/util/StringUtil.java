@@ -5,7 +5,7 @@ package cn.lxw.mysql.util;
  * 〈Utils of String operation.〉
  * @Param: 
  * @Return: 
- * @Author: Administrator
+ * @Author: luoxw
  * @Date: 2021/6/4 18:29
  */
 public class StringUtil {
@@ -15,7 +15,7 @@ public class StringUtil {
      * 〈〉
      * @Param: [str1, str2]
      * @Return: boolean
-     * @Author: Administrator
+     * @Author: luoxw
      * @Date: 2021/6/4 18:24
      */
     public static boolean equal(String str1, String str2) {
@@ -34,7 +34,7 @@ public class StringUtil {
      * 〈〉
      * @Param: [str1, str2]
      * @Return: boolean
-     * @Author: Administrator
+     * @Author: luoxw
      * @Date: 2021/6/4 18:24
      */
     public static boolean notEqual(String str1, String str2) {
@@ -46,7 +46,7 @@ public class StringUtil {
      * 〈〉
      * @Param: [str, array]
      * @Return: boolean
-     * @Author: Administrator
+     * @Author: luoxw
      * @Date: 2021/6/4 18:25
      */
     public static boolean isIn(String str, String[] array) {

@@ -11,7 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * 〈Some function about MySQL.Such as jdbc-connection,sql join...〉
  * @Param: 
  * @Return: 
- * @Author: Administrator
+ * @Author: luoxw
  * @Date: 2021/6/4 18:25
  */
 public class MySQLUtil {
@@ -22,7 +22,7 @@ public class MySQLUtil {
      * 〈〉
      * @Param: [url, user, pwd]
      * @Return: java.sql.Connection
-     * @Author: Administrator
+     * @Author: luoxw
      * @Date: 2021/6/4 18:25
      */
     public static Connection getMySQLConnection(String url, String user, String pwd) {
@@ -41,7 +41,7 @@ public class MySQLUtil {
      * 〈〉
      * @Param: [host, dbName]
      * @Return: java.lang.String
-     * @Author: Administrator
+     * @Author: luoxw
      * @Date: 2021/6/4 18:25
      */
     public static String getConnectUrl(String host, String dbName) {
@@ -55,7 +55,7 @@ public class MySQLUtil {
      * 〈〉
      * @Param: [dbName, tableName]
      * @Return: java.lang.String
-     * @Author: Administrator
+     * @Author: luoxw
      * @Date: 2021/6/4 18:25
      */
     public static String getColumnsSQL(String dbName, String tableName) {
@@ -69,7 +69,7 @@ public class MySQLUtil {
      * 〈〉
      * @Param: [host, dbName, userName, userPwd]
      * @Return: java.util.Map<java.lang.String,java.util.Map<java.lang.String,cn.lxw.mysql.entity.ColumnProp>>
-     * @Author: Administrator
+     * @Author: luoxw
      * @Date: 2021/6/4 18:25
      */
     public static Map<String, Map<String, ColumnProp>> getDBInfo(String host, String dbName, String userName, String userPwd) throws Exception {
@@ -109,7 +109,7 @@ public class MySQLUtil {
      * 〈〉
      * @Param: [rSet, psment, conn]
      * @Return: void
-     * @Author: Administrator
+     * @Author: luoxw
      * @Date: 2021/6/4 18:29
      */
     public static void closeConnection(ResultSet rSet, Statement psment, Connection conn) throws Exception {

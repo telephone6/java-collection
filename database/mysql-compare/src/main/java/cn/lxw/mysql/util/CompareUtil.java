@@ -14,7 +14,7 @@ import java.util.*;
  * 〈The core code of this module.The logic of comparing is here.〉
  * @Param:
  * @Return:
- * @Author: Administrator
+ * @Author: luoxw
  * @Date: 2021/6/4 18:32
  */
 public class CompareUtil {

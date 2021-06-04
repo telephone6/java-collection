@@ -13,7 +13,7 @@ import java.util.Map;
  * 〈The entity of information_schema.COLUMNS〉
  * @Param:
  * @Return:
- * @Author: Administrator
+ * @Author: luoxw
  * @Date: 2021/6/4 18:25
  */
 public class ColumnProp {

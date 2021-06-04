@@ -8,7 +8,7 @@ import java.util.Map;
  * 〈The Result after comparing tables.〉
  * @Param:
  * @Return:
- * @Author: Administrator
+ * @Author: luoxw
  * @Date: 2021/6/4 18:26
  */
 public class CompareTableResult {

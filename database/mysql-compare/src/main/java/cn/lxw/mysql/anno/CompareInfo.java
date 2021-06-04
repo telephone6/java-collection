@@ -14,7 +14,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  *   {@link cn.lxw.mysql.entity.ColumnProp}
  * @Param:
  * @Return:
- * @Author: Administrator
+ * @Author: luoxw
  * @Date: 2021/6/4 18:27
  */
 @Target(FIELD)

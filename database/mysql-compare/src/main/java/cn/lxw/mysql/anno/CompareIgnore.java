@@ -12,7 +12,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  * 〈If the field use the annotation, means that the field will be ignore to be compared with others.〉
  * @Param:
  * @Return:
- * @Author: Administrator
+ * @Author: luoxw
  * @Date: 2021/6/4 18:26
  */
 @Target(FIELD)
