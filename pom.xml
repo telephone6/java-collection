@@ -24,6 +24,7 @@
         <vintage.version>5.7.0</vintage.version>
         <inject.version>1</inject.version>
         <netty.version>4.0.24.Final</netty.version>
+        <mysql.version>5.1.49</mysql.version>
         <!-- maven plugin version config -->
         <spring-boot-maven-plugin.version>2.1.1.RELEASE</spring-boot-maven-plugin.version>
     </properties>
@@ -32,6 +33,7 @@
     <modules>
         <module>java/attach</module>
         <module>java/thread</module>
+        <module>database/mysql-compare</module>
     </modules>
 
     <dependencyManagement>
@@ -40,6 +42,11 @@
             <dependency>
                 <groupId>cn.lxw</groupId>
                 <artifactId>attach</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.lxw</groupId>
+                <artifactId>mysql-compare</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <!-- dependencies management -->
@@ -82,6 +89,12 @@
                 <groupId>io.netty</groupId>
                 <artifactId>netty-all</artifactId>
                 <version>${netty.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
