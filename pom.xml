@@ -32,6 +32,7 @@
     <!-- module management -->
     <modules>
         <module>java/attach</module>
+        <module>java/thread</module>
         <module>database/mysql-compare</module>
     </modules>
 
