@@ -61,7 +61,7 @@ public class CompareUtil {
         firstTblLackColMap.forEach((k, v) -> {
             if (v.size() > 0) {
                 sb.append("第1个数据库的表[").append(k).append("]缺少的字段有:").append(NEXT_LINE);
-                sb.append(appendInForeach(v));
+                sb.append(appendInForeach(v)).append(DOUBLE_NEXT_LINE);
             }
         });
         sb.append(firstTblLackColMap.size() > 0 ? TRIPPLR_NEXT_LINE : "");
@@ -71,9 +71,7 @@ public class CompareUtil {
         secondTblLackColMap.forEach((k, v) -> {
             if (v.size() > 0) {
                 sb.append("第2个数据库的表[").append(k).append("]缺少的字段有:").append(NEXT_LINE);
-                for (int i = 0; i < v.size(); i++) {
-                    sb.append(appendInForeach(v));
-                }
+                sb.append(appendInForeach(v)).append(DOUBLE_NEXT_LINE);
             }
         });
         sb.append(secondTblLackColMap.size() > 0 ? TRIPPLR_NEXT_LINE : "");
