@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.lxw.configdb.DistributeLockInfoMapper">
+
+    <insert id="insertIgnore" parameterType="cn.lxw.entity.DistributeLockInfo">
+        INSERT ignore distribute_lock_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test='null != lockKey'>
+                lock_key,
+            </if>
+            <if test='null != lockValue'>
+                lock_value,
+            </if>
+            <if test='null != expireTime'>
+                expire_time
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test='null != lockKey'>
+                #{lockKey},
+            </if>
+            <if test='null != lockValue'>
+                #{lockValue},
+            </if>
+            <if test='null != expireTime'>
+                #{expireTime}
+            </if>
+        </trim>
+    </insert>
+</mapper>

@@ -1,0 +1,12 @@
+server:
+  port: 10726
+
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/configdb?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    userName: root
+    passWord: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis-plus:
+  mapper-locations: classpath*:mapper/configdb/*Mapper.xml

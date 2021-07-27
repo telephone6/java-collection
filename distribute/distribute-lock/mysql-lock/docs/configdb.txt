@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS `distribute_lock_info`;
+
+CREATE TABLE `distribute_lock_info` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+  `lock_key` varchar(100) NOT NULL COMMENT '加锁Key',
+  `lock_value` varchar(100) NOT NULL COMMENT '加锁Value',
+  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `expire_time` datetime DEFAULT NULL COMMENT '过期时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uidx_lock_key` (`lock_key`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=21884 DEFAULT CHARSET=utf8mb4;

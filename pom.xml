@@ -25,15 +25,30 @@
         <inject.version>1</inject.version>
         <netty.version>4.0.24.Final</netty.version>
         <mysql.version>5.1.49</mysql.version>
+        <mybatis-plus.version>3.2.0</mybatis-plus.version>
+        <druid-spring.version>1.1.20</druid-spring.version>
+        <shardingjdbc-spring.version>4.0.0-RC1</shardingjdbc-spring.version>
         <!-- maven plugin version config -->
         <spring-boot-maven-plugin.version>2.1.1.RELEASE</spring-boot-maven-plugin.version>
     </properties>
 
     <!-- module management -->
     <modules>
+        <!-- java -->
         <module>java/attach</module>
         <module>java/thread</module>
+        <module>java/lock</module>
+        <module>java/ratelimit</module>
+        <!-- database -->
         <module>database/mysql-compare</module>
+        <module>database/mysql-binlogsubscribe</module>
+        <!-- distribute -->
+        <module>distribute/distribute-database/mysql-shardingjdbc</module>
+        <module>distribute/distribute-lock/mysql-lock</module>
+        <module>distribute/distribute-lock/redis-lock</module>
+        <module>distribute/distribute-lock/redission-lock</module>
+        <module>distribute/distribute-lock/zookeeper-lock</module>
+        <module>distribute/distribute-transaction/atomikos</module>
     </modules>
 
     <dependencyManagement>
@@ -96,6 +111,25 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
             </dependency>
+            <!-- mybatis-plus -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!-- druid-spring -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid-spring.version}</version>
+            </dependency>
+            <!-- shardingjdbc-spring -->
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
+                <version>${shardingjdbc-spring.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

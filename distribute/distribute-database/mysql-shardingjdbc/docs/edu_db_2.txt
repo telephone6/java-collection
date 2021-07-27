@@ -1,0 +1,34 @@
+-- ----------------------------
+-- Table structure for course_1
+-- ----------------------------
+DROP TABLE IF EXISTS `course_1`;
+CREATE TABLE `course_1` (
+  `cid` bigint(20) NOT NULL,
+  `cname` varchar(50) NOT NULL,
+  `user_id` bigint(20) NOT NULL,
+  `cstatus` varchar(10) NOT NULL,
+  PRIMARY KEY (`cid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for course_2
+-- ----------------------------
+DROP TABLE IF EXISTS `course_2`;
+CREATE TABLE `course_2` (
+  `cid` bigint(20) NOT NULL,
+  `cname` varchar(50) NOT NULL,
+  `user_id` bigint(20) NOT NULL,
+  `cstatus` varchar(10) NOT NULL,
+  PRIMARY KEY (`cid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for t_udict
+-- ----------------------------
+DROP TABLE IF EXISTS `t_udict`;
+CREATE TABLE `t_udict` (
+  `dictid` bigint(20) NOT NULL,
+  `ustatus` varchar(100) NOT NULL,
+  `uvalue` varchar(100) NOT NULL,
+  PRIMARY KEY (`dictid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

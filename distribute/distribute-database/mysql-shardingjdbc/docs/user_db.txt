@@ -1,0 +1,21 @@
+-- ----------------------------
+-- Table structure for t_udict
+-- ----------------------------
+DROP TABLE IF EXISTS `t_udict`;
+CREATE TABLE `t_udict` (
+  `dictid` bigint(20) NOT NULL,
+  `ustatus` varchar(100) NOT NULL,
+  `uvalue` varchar(100) NOT NULL,
+  PRIMARY KEY (`dictid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for t_user
+-- ----------------------------
+DROP TABLE IF EXISTS `t_user`;
+CREATE TABLE `t_user` (
+  `user_id` bigint(20) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `ustatus` varchar(50) NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

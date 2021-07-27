@@ -1,0 +1,9 @@
+-- ----------------------------
+-- Table structure for tbl_course
+-- ----------------------------
+DROP TABLE IF EXISTS `tbl_course`;
+CREATE TABLE `tbl_course` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) DEFAULT NULL COMMENT '名字',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1418127212928638983 DEFAULT CHARSET=utf8;

@@ -1,0 +1,10 @@
+-- ----------------------------
+-- Table structure for tbl_student
+-- ----------------------------
+DROP TABLE IF EXISTS `tbl_student`;
+CREATE TABLE `tbl_student` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) DEFAULT NULL COMMENT '名字',
+  `age` int(3) DEFAULT '0' COMMENT '年龄（岁）',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
