@@ -12,7 +12,7 @@ import javax.annotation.Resource;
 import java.time.LocalDateTime;
 import java.util.concurrent.TimeUnit;
 
-@Service
+@Service("MysqlLock")
 @Primary
 public class MysqlDistributeLockServiceImpl implements ILockService {
 
@@ -104,18 +104,32 @@ public class MysqlDistributeLockServiceImpl implements ILockService {
 
     /**
      * 功能描述: <br>
-     * 〈Get lock info by lockKey!〉
+     * 〈Get lock key by lockKey!〉
      * @Param: [lockKey]
-     * @Return: {@link DistributeLockInfo}
+     * @Return: {@link String}
      * @Author: luoxw
      * @Date: 2021/7/26 20:14
      */
     @Override
-    public DistributeLockInfo getLock(String lockKey) {
-        return lockInfoMapper.selectOne(new QueryWrapper<DistributeLockInfo>(){
+    public String getCurrentLockKey(String lockKey) {
+        return lockKey;
+    }
+
+    /**
+     * 功能描述: <br>
+     * 〈Get lock value by lockKey!〉
+     * @Param: [lockKey]
+     * @Return: {@link String}
+     * @Author: luoxw
+     * @Date: 2021/7/26 20:14
+     */
+    @Override
+    public String getCurrentLockValue(String lockKey) {
+        DistributeLockInfo distributeLockInfo = lockInfoMapper.selectOne(new QueryWrapper<DistributeLockInfo>() {
             {
-                eq("lock_key",lockKey);
+                eq("lock_key", lockKey);
             }
         });
+        return distributeLockInfo == null?null:distributeLockInfo.getLockValue();
     }
 }

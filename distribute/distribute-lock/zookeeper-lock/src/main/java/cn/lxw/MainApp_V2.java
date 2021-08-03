@@ -1,40 +1,24 @@
 package cn.lxw;
 
-import cn.lxw.entity.DistributeLockInfo;
 import cn.lxw.service.ILockService;
 import cn.lxw.util.LockInfoUtil;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 @SpringBootApplication
-@EnableTransactionManagement
-@MapperScan("cn.lxw")
-@EnableScheduling
-public class MainApp {
+public class MainApp_V2 {
 
-    /**
-     * 功能描述: <br>
-     * 〈DistributeLock testing start here!〉
-     *
-     * @Param: [args]
-     * @Return: {@link Void}
-     * @Author: luoxw
-     * @Date: 2021/7/26 18:20
-     */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         // run the springboot app
-        ConfigurableApplicationContext context = SpringApplication.run(MainApp.class, args);
+        ConfigurableApplicationContext context = SpringApplication.run(MainApp_V2.class, args);
         // define some lock infomation
         final String lockKey = "lock_test";
-        ILockService lockService = context.getBean(ILockService.class);
+        ILockService lockService = (ILockService)context.getBean("zkLock_V2");
         // create a ThreadPoolExecutor
         ThreadPoolExecutor tpe = new ThreadPoolExecutor(5,
                 5,
@@ -49,12 +33,14 @@ public class MainApp {
                     String lockValue = LockInfoUtil.createLockValue();
                     // start lock the lockKey
                     boolean tryLockResult = lockService.tryLock(lockKey, lockValue);
+//                    boolean tryLockResult = true;
+//                    lockService.lock(lockKey, lockValue);
                     // get the most new lock info with lockKey
                     String currentLockValue= lockService.getCurrentLockValue(lockKey);
                     System.out.println("[LockThread]Thread[" + Thread.currentThread().getId() + "] lock result:" + tryLockResult + ",current lock info:" + currentLockValue);
                     // here do some business opearation
                     try {
-                        TimeUnit.SECONDS.sleep((int) (Math.random() * 10));
+                        TimeUnit.SECONDS.sleep((int) (Math.random() * 1));
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -64,6 +50,11 @@ public class MainApp {
                     }
                     // start unlock the lockKey with lockKey & lockValue
                     lockService.unlock(lockKey, lockValue);
+                    try {
+                        TimeUnit.SECONDS.sleep((int) (Math.random() * 1));
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
             });
         }

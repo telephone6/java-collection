@@ -1,7 +1,5 @@
 package cn.lxw.service;
 
-import cn.lxw.entity.DistributeLockInfo;
-
 import java.util.concurrent.TimeUnit;
 
 public interface ILockService {
@@ -14,7 +12,7 @@ public interface ILockService {
      * @Author: luoxw
      * @Date: 2021/7/26 20:14
      */
-    void lock(String lockKey,String lockValue);
+    void lock(String lockKey, String lockValue);
 
     /**
      * 功能描述: <br>
@@ -24,17 +22,17 @@ public interface ILockService {
      * @Author: luoxw
      * @Date: 2021/7/26 20:14
      */
-    boolean tryLock(String lockKey,String lockValue);
+    boolean tryLock(String lockKey, String lockValue);
 
     /**
      * 功能描述: <br>
-     * 〈Lock with a timeout param, return the result immediately if failed.If lock success and it is expired,will be freed by LockCleanTask {@link cn.lxw.task.LockCleanTask}〉
+     * 〈Lock with a timeout param, return the result immediately if failed.If lock success and it is expired,will be freed by LockCleanTask〉
      * @Param: [lockKey, lockValue, expireTime, unit]
      * @Return: {@link boolean}
      * @Author: luoxw
      * @Date: 2021/7/26 20:14
      */
-    boolean tryLock(String lockKey,String lockValue,long expireTime, TimeUnit unit);
+    boolean tryLock(String lockKey, String lockValue, long expireTime, TimeUnit unit);
 
     /**
      * 功能描述: <br>
@@ -44,15 +42,26 @@ public interface ILockService {
      * @Author: luoxw
      * @Date: 2021/7/26 20:14
      */
-    boolean unlock(String lockKey,String lockValue);
+    boolean unlock(String lockKey, String lockValue);
+
 
     /**
      * 功能描述: <br>
-     * 〈Get lock info by lockKey!〉
+     * 〈Get lock key by lockKey!〉
      * @Param: [lockKey]
-     * @Return: {@link DistributeLockInfo}
+     * @Return: {@link String}
      * @Author: luoxw
      * @Date: 2021/7/26 20:14
      */
-    DistributeLockInfo getLock(String lockKey);
+    String getCurrentLockKey(String lockKey);
+
+    /**
+     * 功能描述: <br>
+     * 〈Get lock value by lockKey!〉
+     * @Param: [lockKey]
+     * @Return: {@link String}
+     * @Author: luoxw
+     * @Date: 2021/7/26 20:14
+     */
+    String getCurrentLockValue(String lockKey);
 }
