@@ -23,7 +23,9 @@ public class ErrorLogger {
      * @Date: 2021/8/3 19:12
      */
     public static void printLog(){
-        logger.error("print error log");
+        if(logger.isErrorEnabled()) {
+            logger.error("print error log");
+        }
     }
 
 }

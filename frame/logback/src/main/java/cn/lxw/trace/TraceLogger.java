@@ -23,7 +23,9 @@ public class TraceLogger {
      * @Date: 2021/8/3 19:12
      */
     public static void printLog(){
-        logger.trace("print trace log");
+        if(logger.isTraceEnabled()) {
+            logger.trace("print trace log");
+        }
     }
 
 }

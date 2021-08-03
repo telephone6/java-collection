@@ -23,7 +23,9 @@ public class InfoLogger {
      * @Date: 2021/8/3 19:12
      */
     public static void printLog(){
-        logger.info("print info log");
+        if(logger.isInfoEnabled()){
+            logger.info("print info log");
+        }
     }
 
 }

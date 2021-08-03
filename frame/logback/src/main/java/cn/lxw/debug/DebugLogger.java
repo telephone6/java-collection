@@ -23,7 +23,9 @@ public class DebugLogger {
      * @Date: 2021/8/3 19:12
      */
     public static void printLog(){
-        logger.debug("print debug log");
+        if(logger.isDebugEnabled()) {
+            logger.debug("print debug log");
+        }
     }
 
 }

@@ -23,7 +23,9 @@ public class WarnLogger {
      * @Date: 2021/8/3 19:12
      */
     public static void printLog(){
-        logger.warn("print warn log");
+        if(logger.isWarnEnabled()) {
+            logger.warn("print warn log");
+        }
     }
 
 }
