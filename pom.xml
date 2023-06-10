@@ -42,6 +42,7 @@
         <!-- database -->
         <module>database/mysql-compare</module>
         <module>database/mysql-binlogsubscribe</module>
+        <module>database/postgresql-compare</module>
         <!-- frame -->
         <module>frame/logback</module>
         <!-- distribute -->
